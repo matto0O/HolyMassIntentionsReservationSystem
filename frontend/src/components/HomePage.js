@@ -17,7 +17,6 @@ const useStyles = createStyles((theme) => ({
 
   inner: {
     position: "relative",
-    paddingTop: rem(80),
     paddingBottom: rem(80),
 
     [theme.fn.smallerThan("sm")]: {
@@ -72,7 +71,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-function HomePage() {
+function HomePage({ setActivePage }) {
   const { classes } = useStyles();
 
   return (
@@ -103,16 +102,18 @@ function HomePage() {
             className={classes.control}
             variant="gradient"
             gradient={{ from: "blue", to: "cyan" }}
+            onClick={() => setActivePage(2)}
           >
             Znajdź Twój Kościół
           </Button>
 
           <Button
             component="a"
-            href="https://github.com/mantinedev/mantine"
+            href="/#"
             size="xl"
             variant="default"
             className={classes.control}
+            onClick={() => setActivePage(3)}
           >
             Wspomóż nas
           </Button>
